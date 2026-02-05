@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app:cached
+    command: bash -c "bundle install && rails db:create && rails s -b 0.0.0.0"
