@@ -5,4 +5,4 @@ services:
       - "3000:3000"
     volumes:
       - .:/app:cached
-    command: bash -c "bundle install && rails db:create && rails s -b 0.0.0.0"
+    command: bash -c "rm -f tmp/pids/server.pid && rails db:prepare && rails s -b 0.0.0.0"
