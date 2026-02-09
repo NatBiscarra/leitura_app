@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :books
+
   devise_for :users
-  
+
+  namespace :api do
+    get "books/search" => "books#search" #Quando o usuário acessar a rota /books/search, a requisição será direcionada para a ação search do Api::BooksController
+  end 
+
   root "books#index"
 
   get "up" => "rails/health#show", as: :rails_health_check
