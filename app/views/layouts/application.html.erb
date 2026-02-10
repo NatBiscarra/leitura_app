@@ -29,11 +29,20 @@
 
         <%= link_to "Leitura App", root_path, class: "navbar-brand fw-bold" %>
 
-        <div class="ms-auto">
+        <div class="ms-auto d-flex align-items-center gap-2">
+
           <% if user_signed_in? %>
             <span class="me-3">
               Olá, <strong><%= current_user.email %></strong>
             </span>
+
+            <%= link_to "Meus livros",
+                books_path,
+                class: "btn btn-outline-secondary btn-sm" %>
+
+            <%= link_to "Novo livro",
+                new_book_path,
+                class: "btn btn-success btn-sm" %>
 
             <%= link_to "Sair",
               destroy_user_session_path,
@@ -42,17 +51,20 @@
 
           <% else %>
             <%= link_to "Login",
-              new_user_session_path,
-              class: "btn btn-outline-primary btn-sm me-2" %>
+                new_user_session_path,
+                class: "btn btn-outline-primary btn-sm" %>
 
             <%= link_to "Criar conta",
-              new_user_registration_path,
-              class: "btn btn-primary btn-sm" %>
+                new_user_registration_path,
+                class: "btn btn-primary btn-sm" %>
           <% end %>
         </div>
-
       </div>
     </nav>
-    <%= yield %>
+
+    <!-- container global da página -->
+    <div class="container mt-4">
+      <%= yield %>
+    </div>
   </body>
 </html>

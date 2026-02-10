@@ -1,0 +1,22 @@
+<% content_for :title, "Biblioteca Pública" %>
+
+<h1 class="mb-4">Livros da Comunidade</h1>
+
+<% if @books.any? %>
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-md-4 mb-3">
+        <div class="card p-3">
+          <h5><%= book.title %></h5>
+          <p class="mb-1"><strong>Autor:</strong> <%= book.author %></p>
+          <p class="mb-1"><strong>Ano:</strong> <%= book.year %></p>
+          <small class="text-muted">
+            Adicionado por <%= book.user.email %>
+          </small>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Nenhum livro cadastrado ainda.</p>
+<% end %>
