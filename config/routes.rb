@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :api do
-    get "books/search" => "books#search" #Quando o usuário acessar a rota /books/search, a requisição será direcionada para a ação search do Api::BooksController
+    get "books/search" => "books#search", defaults: { format: :json } #Quando o usuário acessar a rota /books/search, a requisição será direcionada para a ação search do Api::BooksController
   end 
 
   root "books#index"

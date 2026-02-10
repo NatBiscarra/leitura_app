@@ -2,15 +2,24 @@
 
 <% content_for :title, "Books" %>
 
-<h1>Books</h1>
+<h1>Livros</h1>
+
+<h2>Buscar por título</h2>
+
+<div>
+  <input type="text" id="search-input" placeholder="Digite o título">
+  <button id="search-btn">Buscar</button>
+</div>
+
+<div id="results"></div>
 
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
     <p>
-      <%= link_to "Show this book", book %>
+      <%= link_to "Ver detalhes", book %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New book", new_book_path %>
+<%= link_to "Novo ", new_book_path %>
