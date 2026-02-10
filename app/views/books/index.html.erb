@@ -1,25 +1,80 @@
-<p style="color: green"><%= notice %></p>
+<p class="text-success"><%= notice %></p>
 
-<% content_for :title, "Books" %>
+<% content_for :title, "Leitura APP - Meus Livros" %>
 
-<h1>Livros</h1>
+<div class="container mt-4">
 
-<h2>Buscar por título</h2>
+  <h1 class="mb-4">Meus Livros</h1>
 
-<div>
-  <input type="text" id="search-input" placeholder="Digite o título">
-  <button id="search-btn">Buscar</button>
-</div>
 
-<div id="results"></div>
+  <!--buscar na opelibrary -->
+  <div class="card p-3 mb-4 shadow-sm">
+    <h5 class="mb-3">Buscar livro pelo título</h5>
 
-<div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Ver detalhes", book %>
-    </p>
+    <div class="input-group">
+      <input
+        type="text"
+        id="search-input"
+        class="form-control"
+        placeholder="Digite o título do livro"
+      >
+
+      <button id="search-btn" class="btn btn-primary">
+        Buscar
+      </button>
+    </div>
+
+    <!-- resultados da API -->
+    <div id="results" class="mt-3"></div>
+  </div>
+
+
+  <!--botao novo -->
+  <div class="mb-3">
+    <%= link_to "Cadastrar novo livro manualmente",
+        new_book_path,
+        class: "btn btn-success" %>
+  </div>
+
+
+  <!--lista de livros-->
+  <% if @books.any? %>
+
+    <div class="row g-3">
+      <% @books.each do |book| %>
+        <div class="col-md-4">
+
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+
+              <h5 class="card-title"><%= book.title %></h5>
+
+              <p class="card-text text-muted mb-1">
+                <strong>Autor:</strong> <%= book.author %>
+              </p>
+
+              <p class="card-text text-muted">
+                <strong>Ano:</strong> <%= book.year %>
+              </p>
+
+              <%= link_to "Ver detalhes",
+                  book,
+                  class: "btn btn-outline-primary btn-sm" %>
+
+            </div>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+
+  <% else %>
+
+    <!-- estado vazio -->
+    <div class="alert alert-info">
+      Você ainda não cadastrou nenhum livro.
+    </div>
+
   <% end %>
-</div>
 
-<%= link_to "Novo ", new_book_path %>
+</div>

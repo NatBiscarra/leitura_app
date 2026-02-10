@@ -8,3 +8,5 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+/* Use CDN for Bootstrap CSS to avoid missing local asset during development */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css");
