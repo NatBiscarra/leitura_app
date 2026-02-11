@@ -33,7 +33,7 @@
 
           <% if user_signed_in? %>
             <span class="me-3">
-              Olá, <strong><%= current_user.email %></strong>
+              Olá, <strong><%= current_user.email.split("@").first %></strong>
             </span>
 
             <%= link_to "Meus livros",
