@@ -79,6 +79,15 @@ Exemplos:
 O GitHub Copilot foi utilizado como ferramenta de apoio para debug, auxiliando na identificação de erros e sugerindo correções de código, que foram sempre revisadas e validadas manualmente.
 
 ---
+## Diário de desenvolvimento
+Como estou em fase de aprendizado das tecnologias utilizadas, mantive um registro contínuo das etapas do desenvolvimento, incluindo:
+* decisões técnicas tomadas
+* erros encontrados e como foram corrigidos
+* conceitos estudados
+* experimentações realizadas
 
+O objetivo foi documentar o processo de desenvolvimento, incluindo o raciocínio adotado, as etapas de aprendizado, dificuldades encontradas e como cada solução foi construída. 
+
+Para acessar: [devlog.md](.devlog/md)
 
   
