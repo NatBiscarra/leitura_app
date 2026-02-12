@@ -88,6 +88,6 @@ Como estou em fase de aprendizado das tecnologias utilizadas, mantive um registr
 
 O objetivo foi documentar o processo de desenvolvimento, incluindo o raciocínio adotado, as etapas de aprendizado, dificuldades encontradas e como cada solução foi construída. 
 
-Para acessar: [devlog.md](.devlog/md)
+Para acessar: [devlog.md](https://github.com/NatBiscarra/leitura_app/blob/main/devlog.md)
 
   
